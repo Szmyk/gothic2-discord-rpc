@@ -2,6 +2,7 @@
 
 #include "../include/discord.h"
 #include "../include/utils.h"
+#include "../include/hooks.h"
 
 DWORD discordThreadID;
 
@@ -20,6 +21,8 @@ extern "C" BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvRe
 	}
 
 	if (fdwReason == DLL_PROCESS_ATTACH) {
+		createHooks ();
+
 		CreateThread(NULL, 0, discordThread, NULL, 0, &discordThreadID);
 	} else if (fdwReason == DLL_PROCESS_DETACH) {
 		ExitThread(discordThreadID);
