@@ -12,6 +12,7 @@ OutputBaseFilename=g2rpc-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 Uninstallable=no
+DirExistsWarning=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
