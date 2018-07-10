@@ -19,4 +19,5 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl"
 
 [Files]
+Source: "{app}\System\vdfs32g.dll"; DestDir: "{app}\System"; DestName: "vdfs32g.dll.original"; Flags: external skipifsourcedoesntexist uninsneveruninstall
 Source: "..\output\bin\*.dll"; DestDir: "{app}\System"; Flags: ignoreversion
