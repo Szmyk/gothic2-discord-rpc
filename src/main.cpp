@@ -1,6 +1,7 @@
 #include <windows.h>
 
 #include "../include/discord.h"
+#include "../include/utils.h"
 
 DWORD discordThreadID;
 
@@ -13,6 +14,11 @@ DWORD WINAPI discordThread(LPVOID lpParameter) {
 }
 
 extern "C" BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
+
+	if (getModuleFileName() != "Gothic2.exe") {
+		return true;
+	}
+
 	if (fdwReason == DLL_PROCESS_ATTACH) {
 		CreateThread(NULL, 0, discordThread, NULL, 0, &discordThreadID);
 	} else if (fdwReason == DLL_PROCESS_DETACH) {
