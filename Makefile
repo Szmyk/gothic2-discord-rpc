@@ -18,7 +18,9 @@ output/liborgvdfs32g.a:
 
 vdfs32g.dll: output/bin/libdiscord-rpc.dll output/liborgvdfs32g.a
 	g++ -c src/main.cpp -o output/main.o
-	dllwrap -o output/bin/vdfs32g.dll -def output/vdfs32g.def output/main.o -lstdc++ output/liborgvdfs32g.a -static output/bin/libdiscord-rpc.dll
+	g++ -c src/rpc.cpp -o output/rpc.o
+	g++ -c src/discord.cpp -o output/discord.o
+	dllwrap -o output/bin/vdfs32g.dll -def output/vdfs32g.def output/*.o -lstdc++ output/liborgvdfs32g.a -static output/bin/libdiscord-rpc.dll
 	copy "$(ORIGINAL_VDFS_LIB_PATH)" "output\bin\orgVdfs32g.dll"
 
 clean:
