@@ -1,5 +1,6 @@
 #include "../include/hooks.h"
 #include "../include/rpc.h"
+#include "../include/utils.h"
 
 template <class T> void hook(ULONG_PTR address, T value) {
     DWORD oldProtect = 0;
@@ -17,9 +18,11 @@ namespace oCGame {
 	void (__thiscall *LoadWorldStartup)(void*, void*) = reinterpret_cast<__thiscall void(*)(void*, void*)>(0x6C9C10);
 
 	void __thiscall LoadWorldStartup_Hook(void *self, void* zen) {
-		char* zenFile = zString::ToChar(zen);
+		std::string zenFile = getFileName(zString::ToChar(zen));
 
-		updatePresenceDetails(zenFile);
+		std::string details = "World: " + getWorldName(zenFile);
+
+		updatePresenceDetails(const_cast<char*>(details.c_str()));
 
 		LoadWorldStartup(self, zen);
 	}
