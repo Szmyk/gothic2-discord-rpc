@@ -15,6 +15,7 @@ Uninstallable=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl"
 
 [Files]
 Source: "..\output\bin\*.dll"; DestDir: "{app}\System"; Flags: ignoreversion
