@@ -5,4 +5,4 @@
 #include "../libs/discord-rpc/include/discord_rpc.h"
 
 void initPresence();
-void updatePresenceDetails (char* text);
+void updatePresenceState (char* text);

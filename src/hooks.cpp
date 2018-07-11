@@ -22,7 +22,7 @@ namespace oCGame {
 
 		std::string details = "World: " + getWorldName(zenFile);
 
-		updatePresenceDetails(const_cast<char*>(details.c_str()));
+		updatePresenceState(const_cast<char*>(details.c_str()));
 
 		LoadWorldStartup(self, zen);
 	}
