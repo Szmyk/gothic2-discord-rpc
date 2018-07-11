@@ -1,5 +1,5 @@
 #define MyAppName "Discord Rich Presence for Gothic 2 Night of the Raven"
-#define MyAppVersion "0.1"
+#define MyAppVersion "0.2"
 
 [Setup]
 AppName={#MyAppName}
