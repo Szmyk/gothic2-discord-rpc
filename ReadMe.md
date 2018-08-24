@@ -34,4 +34,4 @@ InnoSetup script is placed in `installer` directory.
 
 ## Acknowledgments
 
-Huge thanks to Gynvael Coldwind for articles of DLL spoofing and other Windows related articles.
+Huge thanks to Gynvael Coldwind for articles about DLL spoofing and other Windows related articles.
